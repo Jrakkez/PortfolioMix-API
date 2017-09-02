@@ -1,0 +1,15 @@
+laguage: elixir
+elixir: 1.5.1
+otp_release: 18.2
+sudo: false
+addons:
+  postgresql: 9.6.4
+before_script:
+- psql -c 'create database mixer_test;' -U postgres
+deploy:
+  provider: heroku
+  api_key:
+    secure: lmWKyY3GZ2i8OfPJe0XrPCYEEYQq2fiojRVFUZEBWmsmok5unGc4s8CY+E5bYZ77b/C1PLFrV1e8vXh2CzKeMyQuEhJiK5p7+LkikG440QWM4ZAvetT/Kimd7uyPxd29711H9CCIV0IpT7yq950FW88pOW+I4EXc/LAIGzStCvXdVdWGeVZ4/Yh8invDltZkzgXO1U2GECMF6KCB4765GkY6nrj+Mgeq6JAeyma5Ea+NDalPebJkjX/+9Y3cpbiesQu6n4dz0kTRApYagULOwqCw0WgZk5ik/k+9fImARSe+vVZzbPrw0OlB/Y9P5054rcNnfd4mvIFJ0gM+kkXlysZvlD2CHf7Qhlc0L6jnPk0zo6be3Q2Jp640RLPHK+zrdfXub4SdGVbPEpUJJkaVE4QuNN3IH/A5d7gzaSmkhJenoCeii9RRiJ223avcyb2U0uTLmiztbdbqO4AKNnEEgczmY67FES6HcGnNYUlwHuFIYpyW4RuDKV+mt1vo2Wr7TsmVAxowgDis5TGecFCEqjnnjqRxL0JuZEP19rHbHIkOtUsnQaZhyyPw9YPSJCGSWaUu3A+6xoIijKahVU/asRKjTnse/wWDgp3iVA6/S+CZjw/8w406SRRfMZTFEqU2DJ3O9VQhOVPXEbK9Gki4TbmA9EQds7jFDhefOFITESY=
+  app: 'yes'
+  on:
+    repo: Jrakkez/PortfolioMix-API
