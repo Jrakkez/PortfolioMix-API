@@ -1,0 +1,11 @@
+laguage: elixir
+elixir:
+  1.5.1
+otp_release:
+  18.2
+sudo: false
+addons:
+  postgresql: '9.6.4'
+before_script:
+  #Create test db
+  - psql -c 'create database mixer_test;' -U postgres
